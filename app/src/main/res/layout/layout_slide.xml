@@ -34,7 +34,7 @@
                     android:src="@drawable/avasterdr" />
                 <TextView
                     android:id="@+id/tv_username"
-                    android:text="Username"
+                    android:text="@string/user_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -45,7 +45,7 @@
 
             <TextView
                 android:id="@+id/tv_sign"
-                android:text="I am iron man"
+                android:text="@string/signature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
