@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.goodwell42.gcchat.R;
 import com.goodwell42.gcchat.aty.AtyChatRoom;
 import com.goodwell42.gcchat.util.UserItemMsg;
+import com.goodwell42.gcchat.util.ImageManager;
+import com.goodwell42.gcchat.view.LayoutChats;
 
 import java.util.List;
 
@@ -32,9 +34,10 @@ public class AdapterUserItem extends RecyclerView.Adapter<AdapterUserItem.BaseVi
 
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
-        holder.ivAvatar.setImageResource(userItemMsgList.get(position).getIconID());
+        holder.ivAvatar.setImageResource(ImageManager.imagesAvatar[userItemMsgList.get(position).getIconID()]);
         holder.tvUsername.setText(userItemMsgList.get(position).getUsername());
         holder.tvSign.setText(userItemMsgList.get(position).getSign());
+        holder.ivAvatar.setTag(userItemMsgList.get(position).getIconID());
     }
 
     @Override
@@ -60,6 +63,19 @@ public class AdapterUserItem extends RecyclerView.Adapter<AdapterUserItem.BaseVi
                     Intent intent = new Intent(context, AtyChatRoom.class);
                     intent.putExtra("username", tvUsername.getText().toString());
                     context.startActivity(intent);
+
+                    UserItemMsg userItemMsg = new UserItemMsg();
+                    userItemMsg.setSign(tvSign.getText().toString());
+                    userItemMsg.setIconID((Integer) ivAvatar.getTag());
+                    userItemMsg.setUsername(tvUsername.getText().toString());
+
+                    for (UserItemMsg item : LayoutChats.userItemMsgList) {
+                        if (item.getUsername().equals(userItemMsg.getUsername())) {
+                            return;
+                        }
+                    }
+                    LayoutChats.userItemMsgList.add(userItemMsg);
+                    UserItemMsg.userItemMsgList.add(userItemMsg);
                 }
             });
         }

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.goodwell42.gcchat.R;
 import com.goodwell42.gcchat.adapter.AdapterMomentItem;
 import com.goodwell42.gcchat.util.MomentMsg;
+import com.goodwell42.gcchat.server.ServerManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,14 +43,8 @@ public class LayoutMoments extends Fragment {
         btnSend = (Button) rootView.findViewById(R.id.btn_moment_send);
 
         momentMsgList = new ArrayList<>();
-        for (int i = 1; i < 10; i++) {
-            MomentMsg momentMsg = new MomentMsg();
-            momentMsg.setUsername("Stark " + i);
-            momentMsg.setIconID(R.drawable.avasterwe);
-            momentMsg.setMoment("moments,moments,moments,moments,moments,moments" + i);
-            momentMsg.setGood((i % 3) == 1 ? R.drawable.good : R.drawable.ungood);
-            momentMsgList.add(momentMsg);
-        }
+        momentMsgList.clear();
+        loadData();
 
         adapterMomentItem = new AdapterMomentItem(getContext(), momentMsgList);
         momentRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -59,12 +54,20 @@ public class LayoutMoments extends Fragment {
             @Override
             public void onClick(View v) {
                 MomentMsg momentMsg = new MomentMsg();
-                momentMsg.setUsername("Stark ");
-                momentMsg.setIconID(R.drawable.avasterwe);
+                momentMsg.setUsername(ServerManager.getServerManager().getUsername());
+                momentMsg.setIconID(ServerManager.getServerManager().getIconID());
                 momentMsg.setMoment(tvNewMoment.getText().toString());
                 momentMsg.setGood(R.drawable.ungood);
+                tvNewMoment.setText("");
                 momentMsgList.add(momentMsg);
+                MomentMsg.momentMsgList.add(momentMsg);
             }
         });
+    }
+
+    private void loadData() {
+        for (MomentMsg momentMsg : MomentMsg.momentMsgList) {
+            momentMsgList.add(momentMsg);
+        }
     }
 }

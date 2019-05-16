@@ -12,7 +12,7 @@
 
         <com.goodwell42.gcchat.view.TitleBar
             android:id="@+id/titleBar"
-            app:leftText="@string/app_name"
+            app:leftText="ZZChat"
             app:leftTextColor="#ffffff"
             app:leftBackground="#00ffffff"
             app:rightText="+"

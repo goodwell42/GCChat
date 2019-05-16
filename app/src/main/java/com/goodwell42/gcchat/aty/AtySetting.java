@@ -29,7 +29,7 @@ public class AtySetting extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.aty_setting);
-        
+
         initViews();
     }
 
@@ -39,7 +39,7 @@ public class AtySetting extends AppCompatActivity {
         password = (ImageView) findViewById(R.id.iv_setting_password);
         offline = (ImageView) findViewById(R.id.iv_setting_offline);
 
-        guideMode = getSharedPreferences("gcchat", MODE_PRIVATE).getBoolean("guide", true);
+        guideMode = getSharedPreferences("zzchat", MODE_PRIVATE).getBoolean("guide", true);
         guide.setImageResource(guideMode ? R.drawable.btnselected : R.drawable.btnunselected);
         password.setImageResource(passwordMode ? R.drawable.btnselected : R.drawable.btnunselected);
         offline.setImageResource(offlineMode ? R.drawable.btnselected : R.drawable.btnunselected);
@@ -86,7 +86,7 @@ public class AtySetting extends AppCompatActivity {
         titleBar.setTitleBarClickListetner(new TitleBar.titleBarClickListener() {
             @Override
             public void leftButtonClick() {
-                SharedPreferences sharedPreferences = getSharedPreferences("gcchat", MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getSharedPreferences("zzchat", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("guide", guideMode);
                 editor.apply();

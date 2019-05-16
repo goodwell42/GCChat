@@ -1,12 +1,16 @@
 package com.goodwell42.gcchat.util;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MomentMsg {
 
     private int iconID;
     private String username;
     private String moment;
     private int good;
+    public static List<MomentMsg> momentMsgList = new ArrayList<>();
 
     public int getIconID() {
         return iconID;

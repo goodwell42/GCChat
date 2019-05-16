@@ -28,7 +28,7 @@ public class AtyWelcome extends AppCompatActivity {
     }
 
     private void initLoad() {
-        SharedPreferences sharedPreferences = getSharedPreferences("gcchat", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("zzchat", MODE_PRIVATE);
         boolean guide = sharedPreferences.getBoolean("guide", true);
         if (!guide) {
             handler.sendEmptyMessageDelayed(GO_HOME, DELAY);
