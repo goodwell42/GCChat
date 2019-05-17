@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import com.goodwell42.gcchat.R;
 import com.goodwell42.gcchat.view.TitleBar;
 
+/**
+ * 用于设置页
+ */
 public class AtySetting extends AppCompatActivity {
 
     private TitleBar titleBar;

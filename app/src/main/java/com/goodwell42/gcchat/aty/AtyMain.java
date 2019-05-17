@@ -44,7 +44,7 @@ public class AtyMain extends AppCompatActivity {
         // 显示欢迎用户名
         Intent intent = getIntent();
         String userName = intent.getStringExtra("param1");
-        Toast.makeText(this, "Halo, my Lord: " + userName,
+        Toast.makeText(this, "Halo, my Lord. " + userName,
                 Toast.LENGTH_SHORT).show();
         //String data = getResources().getString(R.string.user_name);
         //String disData = String.format(data, userName);

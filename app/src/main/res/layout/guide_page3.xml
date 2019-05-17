@@ -8,7 +8,17 @@
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="255dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="@string/advertise"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp" />
     <Button
         android:id="@+id/btn_to_main"
         android:text="@string/enter"

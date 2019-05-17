@@ -23,6 +23,9 @@ import com.goodwell42.gcchat.view.TitleBar;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 用于头像和背景图片展示与设置
+ */
 public class AtyDressUp extends AppCompatActivity{
 
     private TitleBar titleBar;

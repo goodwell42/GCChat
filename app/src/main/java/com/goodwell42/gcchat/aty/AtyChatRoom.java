@@ -17,6 +17,9 @@ import com.goodwell42.gcchat.view.TitleBar;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class AtyChatRoom extends AppCompatActivity{
 
     private TitleBar titleBar;

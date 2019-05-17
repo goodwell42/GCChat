@@ -19,6 +19,9 @@ import com.goodwell42.gcchat.adapter.AdapterGuideViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 欢迎页后跳转至引导页，可用于广告投放
+ */
 public class AtyGuide extends AppCompatActivity implements ViewPager.OnPageChangeListener {
 
     private ViewPager viewPager;
